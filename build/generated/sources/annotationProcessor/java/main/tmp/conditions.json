@@ -1,0 +1,1 @@
+[{"name":"conditionalTypeDemo","label":"False condition demo","description":"Checks the boolean variable is false.","mainClass":"com.automationanywhere.botcommand.samples.conditional.ConditionalTypeDemoCondition","attributes":[{"name":"variable","label":"Boolean variable","type":"BOOLEAN","rules":[{"name":"NOT_EMPTY"},{"name":"VARIABLE_TYPE","value":"BOOLEAN"}]}]}]

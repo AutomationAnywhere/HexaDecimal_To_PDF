@@ -1,0 +1,255 @@
+{
+    "name": "Hexadecimal",
+    "label": "[[label]]",
+    "description": "[[description]]",
+    "group": "com.automationanywhere",
+    "artifactName": "Hexadecimal",
+    "packageVersion": "2.0.9-20210618-111930",
+    "codeVersion": "2.0.9-20210618-111930",
+    "author": "",
+    "commands": [
+        {
+            "name": "to_pdf",
+            "label": "[[ToPdf.label]]",
+            "description": "[[ToPdf.description]]",
+            "nodeLabel": "[[ToPdf.node_label]]",
+            "mainClass": "com.automationanywhere.botcommand.samples.commands.basic.ToPdfCommand",
+            "icon": "pkg.svg",
+            "returnType": "STRING",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "[[ToPdf.return_label]]",
+            "returnRequired": true,
+            "attributes": [
+                {
+                    "name": "hexadecimal",
+                    "label": "[[ToPdf.hexadecimal.label]]",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "outputFolder",
+                    "label": "[[ToPdf.outputFolder.label]]",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "conditionals": [
+        {
+            "name": "conditionalTypeDemo",
+            "label": "False condition demo",
+            "description": "Checks the boolean variable is false.",
+            "mainClass": "com.automationanywhere.botcommand.samples.conditional.ConditionalTypeDemoCondition",
+            "attributes": [
+                {
+                    "name": "variable",
+                    "label": "Boolean variable",
+                    "type": "BOOLEAN",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "VARIABLE_TYPE",
+                            "value": "BOOLEAN"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "iterators": [
+        {
+            "name": "iteratorTypeDemo",
+            "label": "Iterator demo",
+            "description": "Iterate number of times",
+            "nodeLabel": ": {{times}} times",
+            "mainClass": "com.automationanywhere.botcommand.samples.iterator.IteratorTypeDemoIterator",
+            "returnType": "NUMBER",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "Return the value in variable",
+            "returnRequired": false,
+            "attributes": [
+                {
+                    "name": "times",
+                    "label": "times",
+                    "type": "NUMBER",
+                    "defaultValue": {
+                        "number": "10",
+                        "type": "NUMBER"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "GREATER_THAN_EQUALS",
+                            "value": "0"
+                        },
+                        {
+                            "name": "NUMBER_INTEGER"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "variables": [
+        {
+            "name": "variableTypeDemo",
+            "description": "Returns '1' as a String",
+            "mainClass": "com.automationanywhere.botcommand.samples.variable.VariableTypeDemoVariable",
+            "type": "STRING"
+        }
+    ],
+    "triggers": [
+        {
+            "name": "jdbcQueryTrigger",
+            "label": "JDBC Query Trigger",
+            "description": "JDBC Query Trigger",
+            "mainClass": "com.automationanywhere.botcommand.samples.trigger.DBStatusTrigger",
+            "icon": "jdbc.svg",
+            "attributes": [
+                {
+                    "name": "driverClassName",
+                    "label": "Please provide the database driver class",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "jdbcUrl",
+                    "label": "Please provide the Jdbc connection string",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "userName",
+                    "label": "Please provide the user Name",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "password",
+                    "label": "Please provide the password",
+                    "type": "CREDENTIAL",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "sqlQuery",
+                    "label": "Please provide the SQL to check the records",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "interval",
+                    "label": "Please provide the interval to query in seconds",
+                    "type": "NUMBER",
+                    "defaultValue": {
+                        "number": "300",
+                        "type": "NUMBER"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "GREATER_THAN",
+                            "value": "0"
+                        },
+                        {
+                            "name": "NUMBER_INTEGER"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "jmsTrigger",
+            "label": "JMS Trigger",
+            "description": "JMS Trigger",
+            "mainClass": "com.automationanywhere.botcommand.samples.trigger.JMSQueueTrigger",
+            "icon": "jms.svg",
+            "attributes": [
+                {
+                    "name": "brokerURL",
+                    "label": "Please provide the broker URL",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                },
+                {
+                    "name": "queueName",
+                    "label": "Please provide the queue name",
+                    "type": "TEXT",
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "demoTrigger",
+            "label": "Demo Trigger",
+            "description": "Demo Trigger",
+            "mainClass": "com.automationanywhere.botcommand.samples.trigger.TriggerDemoTrigger",
+            "icon": "email.svg",
+            "attributes": [
+                {
+                    "name": "interval",
+                    "label": "Please provide the interval to trigger in seconds",
+                    "type": "NUMBER",
+                    "defaultValue": {
+                        "number": "120",
+                        "type": "NUMBER"
+                    },
+                    "rules": [
+                        {
+                            "name": "NOT_EMPTY"
+                        },
+                        {
+                            "name": "GREATER_THAN",
+                            "value": "0"
+                        },
+                        {
+                            "name": "NUMBER_INTEGER"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
